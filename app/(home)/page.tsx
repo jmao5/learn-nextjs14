@@ -4,8 +4,8 @@ export const metadata = {
   title: "Home",
 };
 
-// const URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
-export const API_URL = `${process.env.BaseUrl}/movies`;
+export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
+// export const API_URL = `${process.env.BaseUrl}/movies`;
 
 const getMovies = async () => {
   const res = await fetch(API_URL);
@@ -17,6 +17,7 @@ const HomePage = async () => {
 
   return (
     <div>
+      {process.env.BaseUrl}
       {movies.map((movie) => (
         <li key={movie.id}>
           <Link href={`movies/${movie.id}`}>{movie.title}</Link>
