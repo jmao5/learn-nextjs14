@@ -1,4 +1,4 @@
-import { API_URL } from "../../../(home)/page";
+const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
 
 const getMovie = async (id: number) => {
   const res = await fetch(`${API_URL}/${id}`);
