@@ -13,7 +13,7 @@ WORKDIR /app
 ENV NODE_ENV="production"
 
 ARG BACKEND_URL
-ENV NEXT_BACKEND_URL=$BACKEND_URL
+ENV NEXT_PUBLIC_BASE_URL=$BACKEND_URL
 
 # Throw-away build stage to reduce size of final image
 FROM base as build

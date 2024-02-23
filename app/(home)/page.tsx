@@ -5,7 +5,7 @@ export const metadata = {
 };
 
 // const URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
-export const API_URL = `${process.env.NEXT_BACKEND_URL}/movies`;
+export const API_URL = `${process.env.BaseUrl}/movies`;
 
 const getMovies = async () => {
   const res = await fetch(API_URL);
