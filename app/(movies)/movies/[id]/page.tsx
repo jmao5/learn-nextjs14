@@ -1,4 +1,4 @@
-const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
+const API_URL = `${process.env.BaseUrl}/movies`;
 
 const getMovie = async (id: number) => {
   const res = await fetch(`${API_URL}/${id}`);
