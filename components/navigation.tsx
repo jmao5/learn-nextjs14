@@ -8,7 +8,7 @@ const Navigation = () => {
     <nav>
       <ul>
         <li>
-          <Link href={"/"}>home</Link>
+          <Link href={"/"}>Home</Link>
           {path === "/" ? "🔥" : ""}
         </li>
         <li>
