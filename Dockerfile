@@ -12,8 +12,8 @@ WORKDIR /app
 # Set production environment
 ENV NODE_ENV="production"
 
-ARG NEXT_BACKEND_URL
-ENV NEXT_BACKEND_URL=$NEXT_BACKEND_URL
+ARG BACKEND_URL
+ENV NEXT_BACKEND_URL=$BACKEND_URL
 
 # Throw-away build stage to reduce size of final image
 FROM base as build
