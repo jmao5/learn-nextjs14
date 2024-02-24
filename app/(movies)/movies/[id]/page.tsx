@@ -1,23 +1,18 @@
-import { API_URL } from "@/constants/url";
-
-const getMovie = async (id: number) => {
-  const res = await fetch(`${API_URL}/${id}`);
-  return res.json();
-};
-
-const getVideos = async (id: number) => {
-  const res = await fetch(`${API_URL}/${id}/videos`);
-  return res.json();
-};
+import MovieInfo from "@/components/movie-info";
+import MovieVideos from "@/components/movie-videos";
+import { Suspense } from "react";
 
 const MovieDetail = async ({ params: { id } }: { params: { id: number } }) => {
-  // const movie = await getMovie(id);
-  // const videos = await getVideos(id);
-  const [movie, videos] = await Promise.all([getMovie(id), getMovie(id)]);
-  // console.log("movie : ", movie);
-  console.log("videos : ", videos);
-
-  return <h1>{movie.title}</h1>;
+  return (
+    <div>
+      <Suspense fallback={<h1>...Loading Movie info</h1>}>
+        <MovieInfo id={id} />
+      </Suspense>
+      <Suspense fallback={<h1>...Loading Movie videos</h1>}>
+        <MovieVideos id={id} />
+      </Suspense>
+    </div>
+  );
 };
 
 export default MovieDetail;
