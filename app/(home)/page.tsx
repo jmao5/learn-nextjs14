@@ -1,6 +1,7 @@
 import Movie from "@/components/movie";
 import { API_URL } from "@/constants/url";
 import styles from "@/styles/home.module.css";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Home",
@@ -16,14 +17,16 @@ const HomePage = async () => {
 
   return (
     <div className={styles.container}>
-      {movies.map((movie) => (
-        <Movie
-          key={movie.id}
-          title={movie.title}
-          id={movie.id}
-          poster_path={movie.poster_path}
-        />
-      ))}
+      <Suspense fallback={<h1>...Loading Movie info</h1>}>
+        {movies.map((movie) => (
+          <Movie
+            key={movie.id}
+            title={movie.title}
+            id={movie.id}
+            poster_path={movie.poster_path}
+          />
+        ))}
+      </Suspense>
     </div>
   );
 };
