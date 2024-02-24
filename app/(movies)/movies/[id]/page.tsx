@@ -1,4 +1,4 @@
-const API_URL = `${process.env.BaseUrl}/movies`;
+import { API_URL } from "@/constants/url";
 
 const getMovie = async (id: number) => {
   const res = await fetch(`${API_URL}/${id}`);

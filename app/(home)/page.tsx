@@ -1,10 +1,9 @@
+import { API_URL } from "@/constants/url";
 import Link from "next/link";
 
 export const metadata = {
   title: "Home",
 };
-
-const API_URL = `${process.env.BaseUrl}/movies`;
 
 const getMovies = async () => {
   const res = await fetch(API_URL);
